@@ -273,7 +273,7 @@ const Sidebar = ({ onToggle, activePath = '/' }: SidebarProps) => {
                   const isActive = 
                     decodedActive === decodedItemHref ||
                     (decodedActive.startsWith('/douban') &&
-                      decodedActive.includes(`type=${typeMatch}`)
+                      decodedActive.includes(`tag=${typeMatch}`)
                     )
                     ;
 
