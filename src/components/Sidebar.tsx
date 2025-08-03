@@ -128,17 +128,17 @@ const Sidebar = ({ onToggle, activePath = '/' }: SidebarProps) => {
     {
       icon: Film,
       label: '电影',
-      href: '/douban?type=movie&tag=',
+      href: '/douban?type=movie',
     },
     {
       icon: Tv,
       label: '剧集',
-      href: '/douban?type=tv&tag=',
+      href: '/douban?type=tv',
     },
     {
       icon: Clover,
       label: '综艺',
-      href: '/douban?type=show&tag=',
+      href: '/douban?type=show',
     },
     {
       icon: Swords,
@@ -265,17 +265,17 @@ const Sidebar = ({ onToggle, activePath = '/' }: SidebarProps) => {
                 {menuItems.map((item) => {
                   // 检查当前路径是否匹配这个菜单项
                   const typeMatch = item.href.match(/type=([^&]+)/)?.[1];
-                  const queryMatch = item.href.match(/tag=([^&]+)/)?.[1];
+                  const tagMatch = item.href.match(/tag=([^&]+)/)?.[1];
 
                   // 解码URL以进行正确的比较
                   const decodedActive = decodeURIComponent(active);
                   const decodedItemHref = decodeURIComponent(item.href);
 
-                  const isActive = decodedActive === 
+                  const isActive = 
                     decodedActive === decodedItemHref ||
                     (decodedActive.startsWith('/douban') &&
                       decodedActive.includes(`type=${typeMatch}`) &&
-                      decodedActive.includes(`type=${queryMatch}`)
+                      decodedActive.includes(`tag=${tagMatch}`)
                     );
                   const Icon = item.icon;
                   return (
