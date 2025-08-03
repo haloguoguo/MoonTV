@@ -270,6 +270,12 @@ const Sidebar = ({ onToggle, activePath = '/' }: SidebarProps) => {
                   const decodedActive = decodeURIComponent(active);
                   const decodedItemHref = decodeURIComponent(item.href);
 
+                  console.log(decodedActive);
+                  console.log(decodedItemHref);
+                  console.log(decodedActive === decodedItemHref);
+                  console.log(decodedActive.startsWith('/douban'));
+                  console.log(decodedActive.startsWith('/douban') && decodedActive.includes(`tag=${typeMatch}`));
+
                   const isActive = 
                     decodedActive === decodedItemHref ||
                     (decodedActive.startsWith('/douban') &&
