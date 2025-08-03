@@ -165,6 +165,11 @@ const Sidebar = ({ onToggle, activePath = '/' }: SidebarProps) => {
       label: '港剧',
       href: '/douban?type=custom5&tag=港剧',
     },
+    {
+      icon: Videotape,
+      label: '日漫',
+      href: '/douban?type=custom6&tag=日本漫画',
+    },
   ]);
 
   useEffect(() => {
@@ -269,11 +274,6 @@ const Sidebar = ({ onToggle, activePath = '/' }: SidebarProps) => {
                   // 解码URL以进行正确的比较
                   const decodedActive = decodeURIComponent(active);
                   const decodedItemHref = decodeURIComponent(item.href);
-
-                  console.log(decodedActive);
-                  console.log(decodedItemHref);
-                  console.log(typeMatch);
-                  console.log(decodedActive.startsWith('/douban') && decodedActive.includes(`tag=${typeMatch}`));
 
                   const isActive = 
                     decodedActive === decodedItemHref ||
