@@ -46,7 +46,7 @@ const MobileBottomNav = ({ activePath }: MobileBottomNavProps) => {
     {
       icon: Clapperboard,
       label: '英剧',
-      href: '/douban?type=custom2&=英剧',
+      href: '/douban?type=custom2&tag=英剧',
     },
     {
       icon: Drum,
