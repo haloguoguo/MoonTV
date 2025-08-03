@@ -155,7 +155,7 @@ function DoubanPageClient() {
       setLoading(true);
       let data: DoubanResult;
 
-      if (type === 'custom' || type === 'custom1' || type === 'custom2' || type === 'custom3' || type === 'custom4' || type === 'custom5') {
+      if (type === 'custom' || type === 'custom1' || type === 'custom2' || type === 'custom3' || type === 'custom4' || type === 'custom5' || type === 'custom6') {
         // 自定义分类模式：根据选中的一级和二级选项获取对应的分类
         const selectedCategory = customCategories.find(
           (cat) =>
@@ -172,7 +172,7 @@ function DoubanPageClient() {
         // } else {
         //   throw new Error('没有找到对应的分类');
         // }
-            if('英剧' === tag || '美剧' === tag || '日剧' === tag || '韩剧' === tag || '港剧' === tag ){
+            if('英剧' === tag || '美剧' === tag || '日剧' === tag || '韩剧' === tag || '港剧' === tag || '日本动漫' === tag ){
                 data = await getDoubanList({
                 tag: tag,
                 type: 'tv',
