@@ -282,6 +282,7 @@ const Sidebar = ({ onToggle, activePath = '/' }: SidebarProps) => {
                       decodedActive.includes(`tag=${typeMatch}`)
                     )
                     ;
+                  console.log(isActive);
 
           
                   const Icon = item.icon;
