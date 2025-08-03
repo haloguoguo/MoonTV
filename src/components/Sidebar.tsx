@@ -270,12 +270,11 @@ const Sidebar = ({ onToggle, activePath = '/' }: SidebarProps) => {
                   const decodedActive = decodeURIComponent(active);
                   const decodedItemHref = decodeURIComponent(item.href);
 
-                  // const isActive = decodedActive === decodedItemHref || decodedActive.includes(item.href.split('?')[1]);
                   const isActive = 
                     decodedActive === decodedItemHref ||
                     (decodedActive.startsWith('/douban') &&
                      decodedActive.includes(type=${typeMatch})
-                    )
+                    );
 
           
                   const Icon = item.icon;
