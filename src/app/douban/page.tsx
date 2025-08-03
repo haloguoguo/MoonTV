@@ -28,6 +28,8 @@ function DoubanPageClient() {
   const debounceTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const type = searchParams.get('type') || 'movie';
+  console.log(searchParams);
+  const tag = searchParams.get('tag') || 'tag';
 
   // 获取 runtimeConfig 中的自定义分类数据
   const [customCategories, setCustomCategories] = useState<
@@ -246,15 +248,34 @@ function DoubanPageClient() {
                 cat.query === secondarySelection
             );
 
-            if (selectedCategory) {
-              data = await getDoubanList({
-                tag: selectedCategory.query,
-                type: selectedCategory.type,
-                pageLimit: 25,
-                pageStart: currentPage * 25,
-              });
+            // if (selectedCategory) {
+            //   data = await getDoubanList({
+            //     tag: selectedCategory.query,
+            //     type: selectedCategory.type,
+            //     pageLimit: 25,
+            //     pageStart: currentPage * 25,
+            //   });
+            // } else {
+            //   throw new Error('没有找到对应的分类');
+            // }
+            if(tag !== 'tag'){
+                if (selectedCategory) {
+                  data = await getDoubanList({
+                  tag: selectedCategory.query,
+                  type: selectedCategory.type,
+                  pageLimit: 25,
+                  pageStart: 0,
+                });
+              } else {
+                throw new Error('没有找到对应的分类');
+              }
             } else {
-              throw new Error('没有找到对应的分类');
+                data = await getDoubanList({
+                tag: tag,
+                type: 'tv',
+                pageLimit: 25,
+                pageStart: 0,
+              });
             }
           } else {
             data = await getDoubanCategories(
