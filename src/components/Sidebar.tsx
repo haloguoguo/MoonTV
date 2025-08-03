@@ -168,7 +168,7 @@ const Sidebar = ({ onToggle, activePath = '/' }: SidebarProps) => {
     {
       icon: Videotape,
       label: '日漫',
-      href: '/douban?type=custom6&tag=日本漫画',
+      href: '/douban?type=custom6&tag=日本动画',
     },
   ]);
 
