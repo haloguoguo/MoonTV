@@ -30,8 +30,6 @@ function DoubanPageClient() {
   const type = searchParams.get('type') || 'movie';
   console.log(searchParams.get('tag'));
   const tag = searchParams.get('tag') || 'tag';
-  const paramQuery = searchParams.get('query');
-  console.log(searchParams.get('query'));
 
   // 获取 runtimeConfig 中的自定义分类数据
   const [customCategories, setCustomCategories] = useState<
@@ -177,7 +175,7 @@ function DoubanPageClient() {
         // }
             if('英剧' === tag || '美剧' === tag || '日剧' === tag || '韩剧' === tag || '港剧' === tag ){
                 data = await getDoubanList({
-                tag: paramQuery,
+                tag: tag,
                 type: 'tv',
                 pageLimit: 25,
                 pageStart: 0,
@@ -281,7 +279,7 @@ function DoubanPageClient() {
             // }
             if('英剧' === tag || '美剧' === tag || '日剧' === tag || '韩剧' === tag || '港剧' === tag ){
                 data = await getDoubanList({
-                tag: paramQuery,
+                tag: tag,
                 type: 'tv',
                 pageLimit: 25,
                 pageStart: 0,
