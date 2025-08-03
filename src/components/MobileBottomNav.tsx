@@ -41,27 +41,32 @@ const MobileBottomNav = ({ activePath }: MobileBottomNavProps) => {
     {
       icon: Swords,
       label: '美剧',
-      href: '/douban?type=custom1&query=美剧&tag=美剧',
+      href: '/douban?type=custom1&tag=美剧',
     },
     {
       icon: Clapperboard,
       label: '英剧',
-      href: '/douban?type=custom1&query=英剧&tag=英剧',
+      href: '/douban?type=custom2&=英剧',
     },
     {
       icon: Drum,
       label: '韩剧',
-      href: '/douban?type=custom1&query=韩剧&tag=韩剧',
+      href: '/douban?type=custom3&&tag=韩剧',
     },
     {
       icon: LaptopMinimal,
       label: '日剧',
-      href: '/douban?type=custom1&query=日剧&tag=日剧',
+      href: '/douban?type=custom4&tag=日剧',
     },
     {
       icon: Videotape,
       label: '港剧',
-      href: '/douban?type=custom1&query=港剧&tag=港剧',
+      href: '/douban?type=custom5&tag=港剧',
+    },
+    {
+      icon: Videotape,
+      label: '日漫',
+      href: '/douban?type=custom6&tag=日本漫画',
     },
   ]);
 
@@ -89,7 +94,7 @@ const MobileBottomNav = ({ activePath }: MobileBottomNavProps) => {
     return (
       decodedActive === decodedItemHref ||
       (decodedActive.startsWith('/douban') &&
-        decodedActive.includes(`type=${typeMatch}`))
+        decodedActive.includes(`tag=${typeMatch}`))
     );
   };
 
