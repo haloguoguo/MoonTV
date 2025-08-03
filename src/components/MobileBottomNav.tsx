@@ -87,13 +87,9 @@ const MobileBottomNav = ({ activePath }: MobileBottomNavProps) => {
     const decodedItemHref = decodeURIComponent(href);
 
     return (
-      // decodedActive === decodedItemHref || decodedActive.includes(item.href.split('?')[1])
-      //                   const typeMatch = item.href.match(/tag=([^&]+)/)?.[1];
       decodedActive === decodedItemHref ||
-                    (decodedActive.startsWith('/douban') &&
-                     decodedActive.includes(type=${typeMatch})
-                    )
-
+      (decodedActive.startsWith('/douban') &&
+        decodedActive.includes(`type=${typeMatch}`))
     );
   };
 
