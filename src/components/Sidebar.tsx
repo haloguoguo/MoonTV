@@ -128,42 +128,42 @@ const Sidebar = ({ onToggle, activePath = '/' }: SidebarProps) => {
     {
       icon: Film,
       label: '电影',
-      href: '/douban?type=movie',
+      href: '/douban?type=movie&tag=',
     },
     {
       icon: Tv,
       label: '剧集',
-      href: '/douban?type=tv',
+      href: '/douban?type=tv&tag=',
     },
     {
       icon: Clover,
       label: '综艺',
-      href: '/douban?type=show',
+      href: '/douban?type=show&tag=',
     },
     {
       icon: Swords,
       label: '美剧',
-      href: '/douban?type=tv&query=美剧',
+      href: '/douban?type=tv&tag=美剧',
     },
     {
       icon: Clapperboard,
       label: '英剧',
-      href: '/douban?type=tv&query=英剧',
+      href: '/douban?type=tv&tag=英剧',
     },
     {
       icon: Drum,
       label: '韩剧',
-      href: '/douban?type=tv&query=韩剧',
+      href: '/douban?type=tv&tag=韩剧',
     },
     {
       icon: LaptopMinimal,
       label: '日剧',
-      href: '/douban?type=tv&query=日剧',
+      href: '/douban?type=tv&tag=日剧',
     },
     {
       icon: Videotape,
       label: '港剧',
-      href: '/douban?type=tv&query=港剧',
+      href: '/douban?type=tv&tag=港剧',
     },
   ]);
 
@@ -265,15 +265,18 @@ const Sidebar = ({ onToggle, activePath = '/' }: SidebarProps) => {
                 {menuItems.map((item) => {
                   // 检查当前路径是否匹配这个菜单项
                   const typeMatch = item.href.match(/type=([^&]+)/)?.[1];
+                  const queryMatch = item.href.match(/query=([^&]+)/)?.[1];
 
                   // 解码URL以进行正确的比较
                   const decodedActive = decodeURIComponent(active);
                   const decodedItemHref = decodeURIComponent(item.href);
 
-                  const isActive = decodedActive === decodedItemHref;
-                    // decodedActive === decodedItemHref ||
-                    // (decodedActive.startsWith('/douban') &&
-                    //   decodedActive.includes(`type=${typeMatch}`));
+                  const isActive = decodedActive === 
+                    decodedActive === decodedItemHref ||
+                    (decodedActive.startsWith('/douban') &&
+                      decodedActive.includes(`type=${typeMatch}`) &&
+                      decodedActive.includes(`type=${queryMatch}`)
+                    );
                   const Icon = item.icon;
                   return (
                     <Link
