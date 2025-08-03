@@ -75,7 +75,7 @@ const MobileBottomNav = ({ activePath }: MobileBottomNavProps) => {
   }, []);
 
   const isActive = (href: string) => {
-    const typeMatch = href.match(/type=([^&]+)/)?.[1];
+    const typeMatch = href.match(/tag=([^&]+)/)?.[1];
 
     // 解码URL以进行正确的比较
     const decodedActive = decodeURIComponent(currentActive);
