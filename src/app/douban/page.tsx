@@ -30,6 +30,8 @@ function DoubanPageClient() {
   const type = searchParams.get('type') || 'movie';
   console.log(searchParams.get('tag'));
   const tag = searchParams.get('tag') || 'tag';
+  const paramQuery = searchParams.get('query');
+  console.log(searchParams.get('query'));
 
   // 获取 runtimeConfig 中的自定义分类数据
   const [customCategories, setCustomCategories] = useState<
@@ -173,24 +175,24 @@ function DoubanPageClient() {
         // } else {
         //   throw new Error('没有找到对应的分类');
         // }
-            if(tag !== 'tag'){
-                if (selectedCategory) {
-                  data = await getDoubanList({
-                  tag: selectedCategory.query,
-                  type: selectedCategory.type,
-                  pageLimit: 25,
-                  pageStart: 0,
-                });
-              } else {
-                throw new Error('没有找到对应的分类');
-              }
-            } else {
+            if('英剧' === tag || '美剧' === tag || '日剧' === tag || '韩剧' === tag || '港剧' === tag ){
                 data = await getDoubanList({
-                tag: tag,
+                tag: paramQuery,
                 type: 'tv',
                 pageLimit: 25,
                 pageStart: 0,
               });
+            } else {
+                if (selectedCategory) {
+                    data = await getDoubanList({
+                    tag: selectedCategory.query,
+                    type: selectedCategory.type,
+                    pageLimit: 25,
+                    pageStart: 0,
+                  });
+                } else {
+                  throw new Error('没有找到对应的分类');
+                }
             }
       } else {
         data = await getDoubanCategories(getRequestParams(0));
@@ -277,24 +279,24 @@ function DoubanPageClient() {
             // } else {
             //   throw new Error('没有找到对应的分类');
             // }
-            if(tag !== 'tag'){
-                if (selectedCategory) {
-                  data = await getDoubanList({
-                  tag: selectedCategory.query,
-                  type: selectedCategory.type,
-                  pageLimit: 25,
-                  pageStart: 0,
-                });
-              } else {
-                throw new Error('没有找到对应的分类');
-              }
-            } else {
+            if('英剧' === tag || '美剧' === tag || '日剧' === tag || '韩剧' === tag || '港剧' === tag ){
                 data = await getDoubanList({
-                tag: tag,
+                tag: paramQuery,
                 type: 'tv',
                 pageLimit: 25,
                 pageStart: 0,
               });
+            } else {
+                if (selectedCategory) {
+                    data = await getDoubanList({
+                    tag: selectedCategory.query,
+                    type: selectedCategory.type,
+                    pageLimit: 25,
+                    pageStart: 0,
+                  });
+                } else {
+                  throw new Error('没有找到对应的分类');
+                }
             }
           } else {
             data = await getDoubanCategories(
