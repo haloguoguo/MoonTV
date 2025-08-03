@@ -153,17 +153,17 @@ const Sidebar = ({ onToggle, activePath = '/' }: SidebarProps) => {
     {
       icon: Drum,
       label: '韩剧',
-      href: '/douban?type=custom1&query=韩剧&tag=英剧',
+      href: '/douban?type=custom1&query=韩剧&tag=韩剧',
     },
     {
       icon: LaptopMinimal,
       label: '日剧',
-      href: '/douban?type=custom1&query=日剧&tag=英剧',
+      href: '/douban?type=custom1&query=日剧&tag=日剧',
     },
     {
       icon: Videotape,
       label: '港剧',
-      href: '/douban?type=custom1&query=港剧&tag=英剧',
+      href: '/douban?type=custom1&query=港剧&tag=港剧',
     },
   ]);
 
