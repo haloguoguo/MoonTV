@@ -2,7 +2,7 @@
 
 'use client';
 
-import { Clover, Film, Home, Search, Star, Tv } from 'lucide-react';
+import { Clover, Film, Home, Search, Star, Tv, Swords, Clapperboard, Drum, LaptopMinimal, Videotape } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
@@ -37,6 +37,31 @@ const MobileBottomNav = ({ activePath }: MobileBottomNavProps) => {
       icon: Clover,
       label: '综艺',
       href: '/douban?type=show',
+    },
+    {
+      icon: Swords,
+      label: '美剧',
+      href: '/douban?type=tv&query=美剧',
+    },
+    {
+      icon: Clapperboard,
+      label: '英剧',
+      href: '/douban?type=tv&query=英剧',
+    },
+    {
+      icon: Drum,
+      label: '韩剧',
+      href: '/douban?type=tv&query=韩剧',
+    },
+    {
+      icon: LaptopMinimal,
+      label: '日剧',
+      href: '/douban?type=tv&query=日剧',
+    },
+    {
+      icon: Videotape,
+      label: '港剧',
+      href: '/douban?type=tv&query=港剧',
     },
   ]);
 
