@@ -80,14 +80,20 @@ const MobileBottomNav = ({ activePath }: MobileBottomNavProps) => {
   }, []);
 
   const isActive = (href: string) => {
-    const typeMatch = href.match(/tag=([^&]+)/)?.[1];
+    const typeMatch = href.match(/tag=([^；]+)/)?.[1];
 
     // 解码URL以进行正确的比较
     const decodedActive = decodeURIComponent(currentActive);
     const decodedItemHref = decodeURIComponent(href);
 
     return (
-      decodedActive === decodedItemHref || decodedActive.includes(item.href.split('?')[1])
+      // decodedActive === decodedItemHref || decodedActive.includes(item.href.split('?')[1])
+      //                   const typeMatch = item.href.match(/tag=([^&]+)/)?.[1];
+      decodedActive === decodedItemHref ||
+                    (decodedActive.startsWith('/douban') &&
+                     decodedActive.includes(type=${typeMatch})
+                    )
+
     );
   };
 
