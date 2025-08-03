@@ -143,27 +143,27 @@ const Sidebar = ({ onToggle, activePath = '/' }: SidebarProps) => {
     {
       icon: Swords,
       label: '美剧',
-      href: '/douban?type=custom&query=美剧',
+      href: '/douban?type=custom1&query=美剧&tag=美剧',
     },
     {
       icon: Clapperboard,
       label: '英剧',
-      href: '/douban?type=custom&query=英剧',
+      href: '/douban?type=custom1&query=英剧&tag=英剧',
     },
     {
       icon: Drum,
       label: '韩剧',
-      href: '/douban?type=custom&query=韩剧',
+      href: '/douban?type=custom1&query=韩剧&tag=英剧',
     },
     {
       icon: LaptopMinimal,
       label: '日剧',
-      href: '/douban?type=custom&query=日剧',
+      href: '/douban?type=custom1&query=日剧&tag=英剧',
     },
     {
       icon: Videotape,
       label: '港剧',
-      href: '/douban?type=custom&query=港剧',
+      href: '/douban?type=custom1&query=港剧&tag=英剧',
     },
   ]);
 
@@ -272,11 +272,13 @@ const Sidebar = ({ onToggle, activePath = '/' }: SidebarProps) => {
                   const decodedItemHref = decodeURIComponent(item.href);
 
                   const isActive = 
-                    decodedActive === decodedItemHref ||
-                    (decodedActive.startsWith('/douban') &&
-                      decodedActive.includes(`type=${typeMatch}`) &&
-                      decodedActive.includes(`query=${queryMatch}`)
-                    );
+                    decodedActive === decodedItemHref
+                    // ||
+                    // (decodedActive.startsWith('/douban') &&
+                    //   decodedActive.includes(`type=${typeMatch}`) &&
+                    //   decodedActive.includes(`query=${queryMatch}`)
+                    // )
+                    ;
                   const Icon = item.icon;
                   return (
                     <Link
