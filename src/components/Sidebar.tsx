@@ -264,8 +264,7 @@ const Sidebar = ({ onToggle, activePath = '/' }: SidebarProps) => {
               <div className='space-y-1'>
                 {menuItems.map((item) => {
                   // 检查当前路径是否匹配这个菜单项
-                  const typeMatch = item.href.match(/type=([^&]+)/)?.[1];
-                  const queryMatch = item.href.match(/query=([^&]+)/)?.[1];
+                  const typeMatch = item.href.match(/type=([^@]+)/)?.[1];
 
                   // 解码URL以进行正确的比较
                   const decodedActive = decodeURIComponent(active);
