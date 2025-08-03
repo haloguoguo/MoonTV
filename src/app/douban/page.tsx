@@ -28,7 +28,6 @@ function DoubanPageClient() {
   const debounceTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const type = searchParams.get('type') || 'movie';
-  console.log(searchParams.get('tag'));
   const tag = searchParams.get('tag') || 'tag';
 
   // 获取 runtimeConfig 中的自定义分类数据
@@ -156,7 +155,7 @@ function DoubanPageClient() {
       setLoading(true);
       let data: DoubanResult;
 
-      if (type === 'custom' || type === 'custom1') {
+      if (type === 'custom' || type === 'custom1' || type === 'custom2' || type === 'custom3' || type === 'custom4' || type === 'custom5') {
         // 自定义分类模式：根据选中的一级和二级选项获取对应的分类
         const selectedCategory = customCategories.find(
           (cat) =>
