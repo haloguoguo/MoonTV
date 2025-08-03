@@ -270,7 +270,7 @@ const Sidebar = ({ onToggle, activePath = '/' }: SidebarProps) => {
                   const decodedActive = decodeURIComponent(active);
                   const decodedItemHref = decodeURIComponent(item.href);
 
-                  const isActive = decodedActive === decodedItemHref || decodedActive.includes(item.href.split('?')[0]);
+                  const isActive = decodedActive === decodedItemHref || decodedActive.includes(item.href.split('?')[1]);
           
                   const Icon = item.icon;
                   return (
