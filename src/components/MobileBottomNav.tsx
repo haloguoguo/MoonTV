@@ -26,42 +26,37 @@ const MobileBottomNav = ({ activePath }: MobileBottomNavProps) => {
     {
       icon: Film,
       label: '电影',
-      href: '/douban?type=movie',
+      href: '/douban?type=movie&query=电影&tag=电影',
     },
     {
       icon: Tv,
       label: '剧集',
-      href: '/douban?type=tv',
+      href: '/douban?type=tv&query=剧集&tag=剧集',
     },
     {
       icon: Clover,
       label: '综艺',
-      href: '/douban?type=show',
-    },
-    {
-      icon: Swords,
-      label: '美剧',
-      href: '/douban?type=tv&query=美剧',
+      href: '/douban?type=show&query=综艺&tag=综艺',
     },
     {
       icon: Clapperboard,
       label: '英剧',
-      href: '/douban?type=tv&query=英剧',
+      href: '/douban?type=custom1&query=英剧&tag=英剧',
     },
     {
       icon: Drum,
       label: '韩剧',
-      href: '/douban?type=tv&query=韩剧',
+      href: '/douban?type=custom1&query=韩剧&tag=韩剧',
     },
     {
       icon: LaptopMinimal,
       label: '日剧',
-      href: '/douban?type=tv&query=日剧',
+      href: '/douban?type=custom1&query=日剧&tag=日剧',
     },
     {
       icon: Videotape,
       label: '港剧',
-      href: '/douban?type=tv&query=港剧',
+      href: '/douban?type=custom1&query=港剧&tag=港剧',
     },
   ]);
 
@@ -73,7 +68,7 @@ const MobileBottomNav = ({ activePath }: MobileBottomNavProps) => {
         {
           icon: Star,
           label: '自定义',
-          href: '/douban?type=custom',
+          href: '/douban?type=custom&query=111&tag=111',
         },
       ]);
     }
