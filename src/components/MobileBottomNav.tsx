@@ -39,6 +39,11 @@ const MobileBottomNav = ({ activePath }: MobileBottomNavProps) => {
       href: '/douban?type=show&query=综艺&tag=综艺',
     },
     {
+      icon: Swords,
+      label: '美剧',
+      href: '/douban?type=custom1&query=美剧&tag=美剧',
+    },
+    {
       icon: Clapperboard,
       label: '英剧',
       href: '/douban?type=custom1&query=英剧&tag=英剧',
@@ -82,9 +87,7 @@ const MobileBottomNav = ({ activePath }: MobileBottomNavProps) => {
     const decodedItemHref = decodeURIComponent(href);
 
     return (
-      decodedActive === decodedItemHref ||
-      (decodedActive.startsWith('/douban') &&
-        decodedActive.includes(`type=${typeMatch}`))
+      decodedActive === decodedItemHref || decodedActive.includes(item.href.split('?')[0])
     );
   };
 
