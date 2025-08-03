@@ -128,42 +128,42 @@ const Sidebar = ({ onToggle, activePath = '/' }: SidebarProps) => {
     {
       icon: Film,
       label: '电影',
-      href: '/douban?type=movie&query=电影&tag=电影',
+      href: '/douban?type=movie&tag=电影',
     },
     {
       icon: Tv,
       label: '剧集',
-      href: '/douban?type=tv&query=剧集&tag=剧集',
+      href: '/douban?type=tv&tag=剧集',
     },
     {
       icon: Clover,
       label: '综艺',
-      href: '/douban?type=show&query=综艺&tag=综艺',
+      href: '/douban?type=show&tag=综艺',
     },
     {
       icon: Swords,
       label: '美剧',
-      href: '/douban?type=custom1&query=美剧&tag=美剧',
+      href: '/douban?type=custom1&tag=美剧',
     },
     {
       icon: Clapperboard,
       label: '英剧',
-      href: '/douban?type=custom2&query=英剧&tag=英剧',
+      href: '/douban?type=custom2&=英剧',
     },
     {
       icon: Drum,
       label: '韩剧',
-      href: '/douban?type=custom3&query=韩剧&tag=韩剧',
+      href: '/douban?type=custom3&&tag=韩剧',
     },
     {
       icon: LaptopMinimal,
       label: '日剧',
-      href: '/douban?type=custom4&query=日剧&tag=日剧',
+      href: '/douban?type=custom4&tag=日剧',
     },
     {
       icon: Videotape,
       label: '港剧',
-      href: '/douban?type=custom5&query=港剧&tag=港剧',
+      href: '/douban?type=custom5&tag=港剧',
     },
   ]);
 
@@ -175,7 +175,7 @@ const Sidebar = ({ onToggle, activePath = '/' }: SidebarProps) => {
         {
           icon: Star,
           label: '自定义',
-          href: '/douban?type=custom&query=11&tag=11',
+          href: '/douban?type=custom&tag=11',
         },
       ]);
     }
@@ -272,8 +272,7 @@ const Sidebar = ({ onToggle, activePath = '/' }: SidebarProps) => {
 
                   console.log(decodedActive);
                   console.log(decodedItemHref);
-                  console.log(decodedActive === decodedItemHref);
-                  console.log(decodedActive.startsWith('/douban'));
+                  console.log(typeMatch);
                   console.log(decodedActive.startsWith('/douban') && decodedActive.includes(`tag=${typeMatch}`));
 
                   const isActive = 
