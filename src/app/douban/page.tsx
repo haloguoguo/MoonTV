@@ -163,16 +163,35 @@ function DoubanPageClient() {
             cat.type === primarySelection && cat.query === secondarySelection
         );
 
-        if (selectedCategory) {
-          data = await getDoubanList({
-            tag: selectedCategory.query,
-            type: selectedCategory.type,
-            pageLimit: 25,
-            pageStart: 0,
-          });
-        } else {
-          throw new Error('没有找到对应的分类');
-        }
+        // if (selectedCategory) {
+        //   data = await getDoubanList({
+        //     tag: selectedCategory.query,
+        //     type: selectedCategory.type,
+        //     pageLimit: 25,
+        //     pageStart: 0,
+        //   });
+        // } else {
+        //   throw new Error('没有找到对应的分类');
+        // }
+            if(tag !== 'tag'){
+                if (selectedCategory) {
+                  data = await getDoubanList({
+                  tag: selectedCategory.query,
+                  type: selectedCategory.type,
+                  pageLimit: 25,
+                  pageStart: 0,
+                });
+              } else {
+                throw new Error('没有找到对应的分类');
+              }
+            } else {
+                data = await getDoubanList({
+                tag: tag,
+                type: 'tv',
+                pageLimit: 25,
+                pageStart: 0,
+              });
+            }
       } else {
         data = await getDoubanCategories(getRequestParams(0));
       }
