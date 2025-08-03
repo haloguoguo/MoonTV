@@ -172,7 +172,7 @@ function DoubanPageClient() {
         // } else {
         //   throw new Error('没有找到对应的分类');
         // }
-            if('英剧' === tag || '美剧' === tag || '日剧' === tag || '韩剧' === tag || '港剧' === tag || '日本动漫' === tag ){
+            if('英剧' === tag || '美剧' === tag || '日剧' === tag || '韩剧' === tag || '港剧' === tag || '日本漫画' === tag ){
                 data = await getDoubanList({
                 tag: tag,
                 type: 'tv',
