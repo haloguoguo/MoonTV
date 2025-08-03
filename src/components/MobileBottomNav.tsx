@@ -87,7 +87,7 @@ const MobileBottomNav = ({ activePath }: MobileBottomNavProps) => {
     const decodedItemHref = decodeURIComponent(href);
 
     return (
-      decodedActive === decodedItemHref || decodedActive.includes(item.href.split('?')[0])
+      decodedActive === decodedItemHref || decodedActive.includes(item.href.split('?')[1])
     );
   };
 
