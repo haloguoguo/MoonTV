@@ -401,7 +401,9 @@ function DoubanPageClient() {
       ? '电视剧'
       : type === 'show'
       ? '综艺'
-      : '自定义';
+      : type === 'custom'
+      ? '全部分类'
+      : tag;
   };
 
   const getActivePath = () => {
@@ -423,9 +425,9 @@ function DoubanPageClient() {
             <h1 className='text-2xl sm:text-3xl font-bold text-gray-800 mb-1 sm:mb-2 dark:text-gray-200'>
               {getPageTitle()}
             </h1>
-            <p className='text-sm sm:text-base text-gray-600 dark:text-gray-400'>
+{/*             <p className='text-sm sm:text-base text-gray-600 dark:text-gray-400'>
               来自豆瓣的精选内容
-            </p>
+            </p> */}
           </div>
 
           {/* 选择器组件 */}
@@ -440,15 +442,18 @@ function DoubanPageClient() {
               />
             </div>
           ) : (
-            <div className='bg-white/60 dark:bg-gray-800/40 rounded-2xl p-4 sm:p-6 border border-gray-200/30 dark:border-gray-700/30 backdrop-blur-sm'>
-              <DoubanCustomSelector
-                customCategories={customCategories}
-                primarySelection={primarySelection}
-                secondarySelection={secondarySelection}
-                onPrimaryChange={handlePrimaryChange}
-                onSecondaryChange={handleSecondaryChange}
-              />
-            </div>
+            {type === 'custom' ? (
+              <div className='bg-white/60 dark:bg-gray-800/40 rounded-2xl p-4 sm:p-6 border border-gray-200/30 dark:border-gray-700/30 backdrop-blur-sm'>
+                <DoubanCustomSelector
+                  customCategories={customCategories}
+                  primarySelection={primarySelection}
+                  secondarySelection={secondarySelection}
+                  onPrimaryChange={handlePrimaryChange}
+                  onSecondaryChange={handleSecondaryChange}
+                />
+              </div>
+              ):()
+            }
           )}
         </div>
 
