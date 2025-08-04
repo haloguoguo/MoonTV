@@ -289,7 +289,7 @@ function DoubanPageClient() {
                     tag: selectedCategory.query,
                     type: selectedCategory.type,
                     pageLimit: 25,
-                    pageStart: currentPage * 25,,
+                    pageStart: currentPage * 25,
                   });
                 } else {
                   throw new Error('没有找到对应的分类');
