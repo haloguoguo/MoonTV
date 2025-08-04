@@ -172,7 +172,7 @@ function DoubanPageClient() {
         // } else {
         //   throw new Error('没有找到对应的分类');
         // }
-            if(tag.includes('剧') || '日本动画' === tag ){
+            if(tag.endsWith('剧') || '日本动画' === tag ){
                 data = await getDoubanList({
                 tag: tag,
                 type: 'tv',
@@ -276,7 +276,7 @@ function DoubanPageClient() {
             // } else {
             //   throw new Error('没有找到对应的分类');
             // }
-            if(tag.includes('剧') || '日本动画' === tag ){
+            if(tag.endsWith('剧') || '日本动画' === tag ){
                 data = await getDoubanList({
                 tag: tag,
                 type: 'tv',
