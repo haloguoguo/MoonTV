@@ -441,8 +441,7 @@ function DoubanPageClient() {
                 onSecondaryChange={handleSecondaryChange}
               />
             </div>
-          ) : (
-            {type === 'custom' ? (
+          ) : type === 'custom' ? (
               <div className='bg-white/60 dark:bg-gray-800/40 rounded-2xl p-4 sm:p-6 border border-gray-200/30 dark:border-gray-700/30 backdrop-blur-sm'>
                 <DoubanCustomSelector
                   customCategories={customCategories}
@@ -452,9 +451,8 @@ function DoubanPageClient() {
                   onSecondaryChange={handleSecondaryChange}
                 />
               </div>
-              ):()
-            }
-          )}
+            ):null
+          }
         </div>
 
         {/* 内容展示区域 */}
