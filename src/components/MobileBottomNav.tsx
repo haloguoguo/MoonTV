@@ -77,7 +77,7 @@ const MobileBottomNav = ({ activePath }: MobileBottomNavProps) => {
         ...prevItems,
         {
           icon: Star,
-          label: '自定义分类',
+          label: '全部分类',
           href: '/douban?type=custom&query=111&tag=111',
         },
       ]);
